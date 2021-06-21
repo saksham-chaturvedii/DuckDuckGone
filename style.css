@@ -8,7 +8,7 @@
 }
 
 body{
-    background-image: url('/images/play.png');
+    background-image: url('images/play.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -63,7 +63,7 @@ img{
 }
 /* #gameover
 {
-    background-image: url('/images/game over.png');
+    background-image: url('images/game over.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -83,7 +83,7 @@ img{
 
 .landingpage{
     position: fixed;
-    background-image: url(/images/Mxzu0Y.jpg);
+    background-image: url(images/Mxzu0Y.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
