@@ -33,15 +33,17 @@ img{
     z-index: 1;
     pointer-events: none;
 }
+
 .target
 {
-    position: fixed;
+    position: relative;
     top: -50%; 
     left: 50%;
-    transform: translate(-50%, -50%);
     height: 110px;
     width: 110px;
+    overflow: auto;
     z-index: 0;
+    box-sizing: border-box;
 }
 
 .score{
@@ -49,6 +51,7 @@ img{
     position: fixed;
     top: 0%;
     right: 0%;
+    text-align: center;
     margin: 16px 15px;
     font-size: 18px;
 }
@@ -58,29 +61,20 @@ img{
     position: fixed;
     top: 5%;
     right: 0%;
+    text-align: center;
     margin: 16px 15px;
     font-size: 1rem;
 }
-/* #gameover
-{
-    background-image: url('images/game over.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    z-index: 2;
-} */
 .highscore
 {
     text-transform: uppercase;
     position: fixed;
-    bottom: 2px;
+    bottom: 2%;
+    left: 35%;
     right: 35%;
-    margin: 16px 15px;
+    text-align: center;
     font-size: 1.7rem;
 }
-
 .landingpage{
     position: fixed;
     background-image: url("images/LandingPage.jpg");

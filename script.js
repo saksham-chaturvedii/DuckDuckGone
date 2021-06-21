@@ -48,16 +48,16 @@ document.addEventListener('mousemove', (e) =>{
 })
 
 const spawnTarget = ()=>{
-    
     quackSound.currentTime=0;
     quackSound.play();
-    const top = Math.floor(Math.random() * window.innerHeight)
-    const left = Math.floor(Math.random() * window.innerHeight)
+    const top = Math.floor(Math.random() * (window.innerHeight-200))
+    const left = Math.floor(Math.random() * (window.innerWidth-120))
     target.style.top = `${top}px`
     target.style.left = `${left}px`
 }
 
 const gameOver = () =>{
+    timeLeft += 2;
     alert(`\nGAME OVER\nSCORE: ${score}\n\nClick on "OK" to play again.`)
     if(  score > localStorage.getItem('highscore'))
     {
@@ -81,8 +81,19 @@ const timer = () =>{
     timeLeft -= 1;
     timerText.innerHTML = `${timeLeft} s Left`   
 }
+function getRandomTarget(){
+    var randImg = new Array();
+    randImg[0] = 'images/RedTopLeft.png';
+    randImg[1] = 'images/RedRIght.png';
+    randImg[2] = 'images/RedLeft';
+    randImg[3] = 'images/DuckTopRight.png';
+    randImg[4] = 'images/DuckLeft.png';
+    var number = Math.floor(Math.random() * randImg.length);  
+    target.querySelector('img').src = randImg[number];
+}
 
 target.addEventListener('click', () =>{
+    getRandomTarget();
     shootSound.currentTime = 0;
     shootSound.play();
     score +=1;
