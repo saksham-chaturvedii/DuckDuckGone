@@ -78,11 +78,11 @@ const timer = () =>{
 function getRandomTarget(){
     
     var randImg = new Array();
-    randImg[0] = 'images/RedTopLeft.png';
-    randImg[1] = 'images/RedRIght.png';
-    randImg[2] = 'images/RedLeft.png';
-    randImg[3] = 'images/DuckTopRight.png';
-    randImg[4] = 'images/DuckLeft.png';
+    randImg[0] = "images/RedTopLeft.png";
+    randImg[1] = "images/RedRIght.png";
+    randImg[2] = "images/RedLeft.png";
+    randImg[3] = "images/DuckTopRight.png";
+    randImg[4] = "images/DuckLeft.png";
     var number = Math.floor(Math.random() * randImg.length);  
     target.querySelector('img').src = randImg[number];
     quackSound.currentTime=0;
