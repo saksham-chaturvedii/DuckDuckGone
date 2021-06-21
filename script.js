@@ -2,7 +2,6 @@ const aim  = document.querySelector('.aim');
 const target  = document.querySelector('.target');
 const scoreText = document.querySelector('.score');
 const timerText = document.querySelector('.timer');
-const gameoverimg = document.querySelector('#gameover');
 const highscoreText = document.querySelector('.highscore');
 const ClickToBegin = document.querySelector('.ClickToBegin');
 const landingpage = document.querySelector('.landingpage');
@@ -12,8 +11,11 @@ const gameoverSound = document.querySelector('.gameoverSound');
 const quackSound = document.querySelector('.quackSound');
 
 var score = 0;
-var timeLeft = 30;
+var timeLeft = 1;
 var highscore = 0;
+
+welcomeSound.currentTime= 0;
+welcomeSound.play();
 
 const play = ()=>{
     setInterval(() => {
@@ -21,12 +23,9 @@ const play = ()=>{
     }, 1000);
 }
 
-welcomeSound.currentTime= 0;
-welcomeSound.play();
 
 ClickToBegin.addEventListener('click', ()=>{
     document.querySelector('.landingpage').style.display = "none";
-
     if(localStorage.getItem('highscore'))
     {
         highscore = localStorage.getItem('highscore');
@@ -48,8 +47,6 @@ document.addEventListener('mousemove', (e) =>{
 })
 
 const spawnTarget = ()=>{
-    quackSound.currentTime=0;
-    quackSound.play();
     const top = Math.floor(Math.random() * (window.innerHeight-200))
     const left = Math.floor(Math.random() * (window.innerWidth-120))
     target.style.top = `${top}px`
@@ -66,8 +63,6 @@ const gameOver = () =>{
         highscoreText.innerHTML = `High Score: ${highscore}`;
     }
     window.location.reload();
-    welcomeSound.currentTime=0;
-    welcomeSound.play();
 }
 
 const timer = () =>{
@@ -82,6 +77,7 @@ const timer = () =>{
     timerText.innerHTML = `${timeLeft} s Left`   
 }
 function getRandomTarget(){
+    
     var randImg = new Array();
     randImg[0] = 'images/RedTopLeft.png';
     randImg[1] = 'images/RedRIght.png';
@@ -90,6 +86,8 @@ function getRandomTarget(){
     randImg[4] = 'images/DuckLeft.png';
     var number = Math.floor(Math.random() * randImg.length);  
     target.querySelector('img').src = randImg[number];
+    quackSound.currentTime=0;
+    quackSound.play();
 }
 
 target.addEventListener('click', () =>{
