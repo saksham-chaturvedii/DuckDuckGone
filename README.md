@@ -11,7 +11,7 @@
 
 #### How To Score? 
 -> Shoot the 🦆 wherever they appear by clicking on them using the crosshair 🔫. <br>
--> **Timer** = 60s, each play. Try shooting as many ducks as possible before the time runs out ⌛. 
+-> **Timer** = 30s, each play. Try shooting as many ducks as possible before the time runs out ⌛. 
 
 ### Scoring
 
