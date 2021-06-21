@@ -11,7 +11,7 @@ const gameoverSound = document.querySelector('.gameoverSound');
 const quackSound = document.querySelector('.quackSound');
 
 var score = 0;
-var timeLeft = 1;
+var timeLeft = 30;
 var highscore = 0;
 
 welcomeSound.currentTime= 0;
@@ -22,7 +22,6 @@ const play = ()=>{
         timer();
     }, 1000);
 }
-
 
 ClickToBegin.addEventListener('click', ()=>{
     document.querySelector('.landingpage').style.display = "none";
@@ -55,7 +54,7 @@ const spawnTarget = ()=>{
 
 const gameOver = () =>{
     timeLeft += 2;
-    alert(`\nGAME OVER\nSCORE: ${score}\n\nClick on "OK" to play again.`)
+    alert(`\nGAME OVER\nSCORE: ${score}\n\nClick on "OK" or Press "ENTER" to play again.`)
     if(  score > localStorage.getItem('highscore'))
     {
         localStorage.setItem('highscore', score);
