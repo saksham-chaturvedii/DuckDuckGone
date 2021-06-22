@@ -9,6 +9,9 @@
 
 ### GamePlay
 
+![GamePlay02](https://user-images.githubusercontent.com/81289215/122899074-1c044200-d369-11eb-8400-9b447a69da52.gif)
+
+
 #### How To Score? 
 -> Shoot the 🦆 wherever they appear by clicking on them using the crosshair 🔫. <br>
 -> **Timer** = 30s, each play. Try shooting as many ducks as possible before the time runs out ⌛. 
