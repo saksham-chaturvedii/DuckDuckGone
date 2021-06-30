@@ -9,6 +9,7 @@ const shootSound = document.querySelector('.shootSound') ;
 const welcomeSound = document.querySelector('.welcomeSound') ;
 const gameoverSound = document.querySelector('.gameoverSound');
 const quackSound = document.querySelector('.quackSound');
+const restart = document.querySelector('.restart');
 
 var score = 0;
 var timeLeft = 30;
@@ -35,6 +36,7 @@ ClickToBegin.addEventListener('click', ()=>{
     }
     scoreText.innerHTML = `Score: ${score}`
     timerText.innerHTML = `${timeLeft} s Left`
+    restart.innerHTML = 'Restart';
     spawnTarget();
     play();
 })
@@ -89,13 +91,22 @@ function getRandomTarget(){
     quackSound.play();
 }
 
-target.addEventListener('click', () =>{
+const spawnnew=()=>{
     getRandomTarget();
+    
+    spawnTarget();
+}
+
+target.addEventListener('click', () =>{
+    target.querySelector('img').src = 'https://www.pinclipart.com/picdir/middle/544-5449025_boom-clipart-starburst-cartoon-explosion-transparent-background-png.png';
+    target.querySelector('img').style.backgroundColor='transparent';
     shootSound.currentTime = 0;
     shootSound.play();
     score +=1;
     scoreText.innerHTML = `Score: ${score}`
-    spawnTarget();
+    setTimeout(spawnnew,1000);
 })
 
-
+restart.addEventListener('click',()=>{
+    gameOver();
+})
