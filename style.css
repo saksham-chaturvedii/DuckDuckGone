@@ -65,6 +65,15 @@ img{
     margin: 16px 15px;
     font-size: 1rem;
 }
+.restart{
+    text-transform: uppercase;
+    position: fixed;
+    top: 10%;
+    right: 0%;
+    text-align: center;
+    margin: 16px 15px;
+    font-size: 1rem;
+}
 .highscore
 {
     text-transform: uppercase;
