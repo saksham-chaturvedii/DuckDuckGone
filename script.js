@@ -1,14 +1,14 @@
-let aim = document.querySelector(".aim");
-let target = document.querySelector(".target");
-let scoreText = document.querySelector(".score");
-let timerText = document.querySelector(".timer");
-let highscoreText = document.querySelector(".highscore");
-let ClickToBegin = document.querySelector(".ClickToBegin");
-let landingpage = document.querySelector(".landingpage");
-let shootSound = document.querySelector(".shootSound");
-let welcomeSound = document.querySelector(".welcomeSound");
-let gameoverSound = document.querySelector(".gameoverSound");
-let quackSound = document.querySelector(".quackSound");
+const aim = document.querySelector(".aim");
+const target = document.querySelector(".target");
+const scoreText = document.querySelector(".score");
+const timerText = document.querySelector(".timer");
+const highscoreText = document.querySelector(".highscore");
+const ClickToBegin = document.querySelector(".ClickToBegin");
+const landingpage = document.querySelector(".landingpage");
+const shootSound = document.querySelector(".shootSound");
+const welcomeSound = document.querySelector(".welcomeSound");
+const gameoverSound = document.querySelector(".gameoverSound");
+const quackSound = document.querySelector(".quackSound");
 
 console.log((aim.style.left = "50%"));
 
@@ -19,7 +19,7 @@ var highscore = 0;
 welcomeSound.currentTime = 0;
 welcomeSound.play();
 
-let play = () => {
+const play = () => {
   setInterval(() => {
     timer();
   }, 1000);
@@ -44,14 +44,14 @@ document.addEventListener("mousemove", (e) => {
   aim.style.top = `${e.clientY}px`;
 });
 
-let spawnTarget = () => {
-  let top = Math.floor(Math.random() * (window.innerHeight - 200));
-  let left = Math.floor(Math.random() * (window.innerWidth - 120));
+const spawnTarget = () => {
+  const top = Math.floor(Math.random() * (window.innerHeight - 200));
+  const left = Math.floor(Math.random() * (window.innerWidth - 120));
   target.style.top = `${top}px`;
   target.style.left = `${left}px`;
 };
 
-let gameOver = () => {
+const gameOver = () => {
   timeLeft += 2;
   alert(`\nGAME OVER\nSCORE: ${score}\n\nClick on "OK" or Press "ENTER" to play again.`);
   if (score > localStorage.getItem("highscore")) {
@@ -62,7 +62,7 @@ let gameOver = () => {
   window.location.reload();
 };
 
-let timer = () => {
+const timer = () => {
   if (timeLeft === 0) {
     gameoverSound.currentTime = 0;
     gameoverSound.play();
